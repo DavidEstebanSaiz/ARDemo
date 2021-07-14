@@ -1,3 +1,5 @@
+console.log("HOLAS", geolocationCoordinatesInstance);
+
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
   button.innerText = "﹖";
@@ -7,12 +9,14 @@ window.onload = () => {
 };
 
 function staticLoadPlaces() {
+  let { longitude, latitude } = geolocationCoordinatesInstance;
+  console.log("HOLAS", geolocationCoordinatesInstance);
   return [
     {
       name: "Pokèmon",
       location: {
-        lat: 40.4469,
-        lng: -3.6914,
+        lat: latitude,
+        lng: longitude,
       },
     },
   ];
