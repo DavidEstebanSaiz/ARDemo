@@ -2,9 +2,6 @@ let lat = null;
 let lng = null;
 
 window.onload = () => {
-  const button = document.querySelector('button[data-action="change"]');
-  button.innerText = "﹖";
-
   navigator.geolocation.getCurrentPosition(function (position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
