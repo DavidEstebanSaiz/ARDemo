@@ -6,7 +6,6 @@ window.onload = () => {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
     let places = staticLoadPlaces();
-    console.log("HOLAS", places);
     renderPlaces(places);
   });
 };
@@ -16,7 +15,7 @@ function staticLoadPlaces() {
     {
       name: "Magnemite",
       location: {
-        lat: lat,
+        lat: lat + 0.00001,
         lng: lng,
       },
     },
