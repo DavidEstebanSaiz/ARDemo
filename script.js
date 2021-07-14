@@ -1,22 +1,26 @@
-console.log("HOLAS", geolocationCoordinatesInstance);
+let lat = null;
+let lng = null;
 
 window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
   button.innerText = "﹖";
 
-  let places = staticLoadPlaces();
-  renderPlaces(places);
+  navigator.geolocation.getCurrentPosition(function (position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+    console.log("HOLAS", lat, lng);
+    let places = staticLoadPlaces();
+    renderPlaces(places);
+  });
 };
 
 function staticLoadPlaces() {
-  let { longitude, latitude } = geolocationCoordinatesInstance;
-  console.log("HOLAS", geolocationCoordinatesInstance);
   return [
     {
       name: "Pokèmon",
       location: {
-        lat: latitude,
-        lng: longitude,
+        lat,
+        lng,
       },
     },
   ];
