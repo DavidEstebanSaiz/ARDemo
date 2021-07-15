@@ -3,6 +3,7 @@ let lng = null;
 
 window.onload = () => {
   var camera = document.getElementById("camera");
+  /*
   const crd_longitude = document.getElementById("crd_longitude");
   const crd_latitude = document.getElementById("crd_latitude");
   const zero_crd_longitude = document.getElementById("zero_crd_longitude");
@@ -12,8 +13,24 @@ window.onload = () => {
   const compass_heading = document.getElementById("compass_heading");
   const camera_angle = document.getElementById("camera_angle");
   const geohash_7chars = document.getElementById("geohash_7chars");
+  */
 
   console.log("HOLAS", camera);
+
+  AFRAME.registerComponent("rotation-reader", {
+    tick: function () {
+      // `this.el` is the element.
+      // `object3D` is the three.js object.
+
+      // `rotation` is a three.js Euler using radians. `quaternion` also available.
+      console.log(this.el.object3D.rotation);
+
+      // `position` is a three.js Vector3.
+      console.log(this.el.object3D.position);
+    },
+  });
+
+  /*
 
   camera.addEventListener("componentchanged", function (evt) {
     console.log("HOLAS", evt);
@@ -60,14 +77,16 @@ window.onload = () => {
     }
   });
 };
+*/
 
-//DECLARAR LEMENTOS
-navigator.geolocation.getCurrentPosition(function (position) {
-  lat = position.coords.latitude;
-  lng = position.coords.longitude;
-  let places = staticLoadPlaces();
-  renderPlaces(places);
-});
+  //DECLARAR LEMENTOS
+  navigator.geolocation.getCurrentPosition(function (position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+    let places = staticLoadPlaces();
+    renderPlaces(places);
+  });
+};
 
 function generateRandomInt(min, max) {
   const randomnum = Math.random() * (max - min);
