@@ -4,39 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   </head>
 
   <script src="./script.js"></script>
   <body style="margin: 0; overflow: hidden">
-    <div
-      style="
-        position: fixed;
-        top: 10px;
-        width: 100%;
-        text-align: center;
-        z-index: 1;
-        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-      "
-    >
-      <div>
-        coords: <span id="crd_longitude"></span>,
-        <span id="crd_latitude"></span> (zero coords:
-        <span id="zero_crd_longitude"></span>,
-        <span id="zero_crd_latitude"></span>)
-      </div>
-      <div>
-        camera coords: <span id="camera_p_x"></span>,
-        <span id="camera_p_z"></span>
-      </div>
-      <div>
-        compass heading: <span id="compass_heading"></span>, camera angle:
-        <span id="camera_angle"></span>, yaw angle: <span id="yaw_angle"></span>
-      </div>
-      <div>geohash_7chars: <span id="geohash_7chars"></span></div>
-    </div>
     <a-scene
       vr-mode-ui="enabled: false"
       embedded
