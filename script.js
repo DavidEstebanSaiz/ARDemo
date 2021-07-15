@@ -24,41 +24,11 @@ function staticLoadPlaces() {
       location: {
         lat: lat - 0.00022,
         lng: lng + 0.00022,
-      },
-    },
-    {
-      name: "Magnemite",
-      location: {
-        lat: lat + 0.00091,
-        lng: lng - 0.00032,
-      },
-    },
-    {
-      name: "Magnemite",
-      location: {
-        lat: lat + 0.00002,
-        lng: lng + 0.00008,
-      },
-    },
-    {
-      name: "Magnemite",
-      location: {
-        lat: lat + 0.00002,
-        lng: +0.00003,
-      },
-    },
-    {
-      name: "Magnemite",
-      location: {
-        lat: lat - 0.00024,
-        lng: lng + 0.00034,
-      },
-    },
-    {
-      name: "Magnemite",
-      location: {
-        lat: lat - 0.00105,
-        lng: lng + 0.00065,
+        position: {
+          x: 1,
+          y: 1,
+          z: 1,
+        },
       },
     },
   ];
@@ -73,8 +43,9 @@ function renderPlaces(places) {
 
     let model = document.createElement("a-entity");
     model.setAttribute(
-      "gps-entity-place",
-      `latitude: ${latitude}; longitude: ${longitude};`
+      "position",
+      //`latitude: ${latitude}; longitude: ${longitude};`
+      `${x} ${y} ${z}`
     );
     model.setAttribute("gltf-model", "./assets/magnemite/scene.gltf");
     model.setAttribute("rotation", "0 180 0");
