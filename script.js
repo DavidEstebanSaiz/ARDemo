@@ -25,6 +25,7 @@ window.onload = () => {
     const geohash_7chars = document.getElementById("geohash_7chars");
 
     camera.addEventListener("componentchanged", function (evt) {
+      console.log("HOLAS", evt);
       switch (evt.detail.name) {
         case "rotation":
           //console.log('camera rotation changed', evt.detail.newData);
