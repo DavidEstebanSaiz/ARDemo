@@ -24,11 +24,11 @@ function staticLoadPlaces() {
       location: {
         lat: lat - 0.00022,
         lng: lng + 0.00022,
-        position: {
-          x: 1,
-          y: 1,
-          z: 1,
-        },
+      },
+      position: {
+        x: 1,
+        y: 1,
+        z: 1,
       },
     },
   ];
@@ -45,12 +45,12 @@ function renderPlaces(places) {
     model.setAttribute(
       "position",
       //`latitude: ${latitude}; longitude: ${longitude};`
-      `${x} ${y} ${z}`
+      `${place.position.x} ${place.position.y} ${place.position.z}`
     );
     model.setAttribute("gltf-model", "./assets/magnemite/scene.gltf");
     model.setAttribute("rotation", "0 180 0");
     model.setAttribute("animation-mixer", "");
-    model.setAttribute("scale", "0.5 0.5 0.5");
+    model.setAttribute("scale", "0.1 0.1 0.1");
 
     model.addEventListener("loaded", () => {
       window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"));

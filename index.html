@@ -16,8 +16,24 @@
       embedded
       arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
     >
-      <a-camera rotation-reader> </a-camera>
+      <a-camera
+        rotation-reader
+        look-controls="reverseMouseDrag:true; touchEnabled: false; enabled: false;"
+      >
+      </a-camera>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-assets>
+        <a-asset-item
+          id="paper"
+          src="/assets/magnemite/scene.gltf"
+        ></a-asset-item>
+      </a-assets>
+      <a-entity
+        gltf-model="#paper"
+        animation-mixer=""
+        position="5 5 -5"
+        scale="0.1 0.1 0.1"
+      ></a-entity>
     </a-scene>
   </body>
 </html>
