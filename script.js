@@ -108,8 +108,8 @@ function renderPlaces(places) {
     let model = document.createElement("a-entity");
     model.setAttribute(
       "position",
-      `${(x, y, z)}`
-      //`latitude: ${latitude}; longitude: ${longitude};`
+      //`${(x, y, z)}`
+      `latitude: ${latitude}; longitude: ${longitude};`
     );
     model.setAttribute("gltf-model", "./assets/magnemite/scene.gltf");
     model.setAttribute("rotation", "0 180 0");
