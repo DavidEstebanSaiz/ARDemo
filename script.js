@@ -22,8 +22,8 @@ function staticLoadPlaces() {
     {
       name: "Magnemite",
       location: {
-        lat: lat + 0.00241,
-        lng: lng - 0.00132,
+        lat: lat + 0.00091,
+        lng: lng - 0.00032,
       },
     },
     {
@@ -36,22 +36,22 @@ function staticLoadPlaces() {
     {
       name: "Magnemite",
       location: {
-        lat: lat + 0.00021,
-        lng: +0.00021,
+        lat: lat + 0.00008,
+        lng: +0.00008,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat - 0.00304,
-        lng: lng - 0.00304,
+        lat: lat - 0.00064,
+        lng: lng - 0.00064,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat - 0.00305,
-        lng: lng + 0.00305,
+        lat: lat - 0.00105,
+        lng: lng + 0.00105,
       },
     },
   ];
