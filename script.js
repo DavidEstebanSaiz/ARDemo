@@ -24,6 +24,8 @@ window.onload = () => {
     const camera_angle = document.getElementById("camera_angle");
     const geohash_7chars = document.getElementById("geohash_7chars");
 
+    console.log("HOLAS", camera);
+
     camera.addEventListener("componentchanged", function (evt) {
       console.log("HOLAS", evt);
       switch (evt.detail.name) {
