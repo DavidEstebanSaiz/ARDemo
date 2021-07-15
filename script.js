@@ -15,8 +15,8 @@ function staticLoadPlaces() {
     {
       name: "Magnemite",
       location: {
-        lat: lat - 0.00172,
-        lng: lng + 0.00172,
+        lat: lat - 0.00072,
+        lng: lng + 0.00022,
       },
     },
     {
@@ -30,14 +30,14 @@ function staticLoadPlaces() {
       name: "Magnemite",
       location: {
         lat: lat + 0.00002,
-        lng: lng,
+        lng: lng + 0.00008,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + 0.00001,
-        lng: +0.00001,
+        lat: lat + 0.00002,
+        lng: +0.00003,
       },
     },
     {
@@ -51,7 +51,7 @@ function staticLoadPlaces() {
       name: "Magnemite",
       location: {
         lat: lat - 0.00105,
-        lng: lng + 0.00105,
+        lng: lng + 0.00065,
       },
     },
   ];
@@ -69,7 +69,7 @@ function renderPlaces(places) {
       "gps-entity-place",
       `latitude: ${latitude}; longitude: ${longitude};`
     );
-    model.setAttribute("gltf-model", "./assets/articuno/scene.gltf");
+    model.setAttribute("gltf-model", "./assets/magnemite/scene.gltf");
     model.setAttribute("rotation", "0 180 0");
     model.setAttribute("animation-mixer", "");
     model.setAttribute("scale", "0.5 0.5 0.5");
