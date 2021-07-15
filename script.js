@@ -21,43 +21,43 @@ function staticLoadPlaces() {
     {
       name: "Magnemite",
       location: {
-        lat: lat + generateRandomInt(-randomSpace, randomSpace),
-        lng: lng + generateRandomInt(-randomSpace, randomSpace),
+        lat: lat - 0.00022,
+        lng: lng + 0.00022,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + generateRandomInt(-randomSpace, randomSpace),
-        lng: lng + generateRandomInt(-randomSpace, randomSpace),
+        lat: lat + 0.00091,
+        lng: lng - 0.00032,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + generateRandomInt(-randomSpace, randomSpace),
-        lng: lng + generateRandomInt(-randomSpace, randomSpace),
+        lat: lat + 0.00002,
+        lng: lng + 0.00008,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + generateRandomInt(-randomSpace, randomSpace),
-        lng: lng + generateRandomInt(-randomSpace, randomSpace),
+        lat: lat + 0.00002,
+        lng: +0.00003,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + generateRandomInt(-randomSpace, randomSpace),
-        lng: lng + generateRandomInt(-randomSpace, randomSpace),
+        lat: lat - 0.00024,
+        lng: lng + 0.00034,
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + generateRandomInt(-randomSpace, randomSpace),
-        lng: lng + generateRandomInt(-randomSpace, randomSpace),
+        lat: lat - 0.00105,
+        lng: lng + 0.00065,
       },
     },
   ];
