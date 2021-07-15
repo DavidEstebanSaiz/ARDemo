@@ -25,12 +25,22 @@ function staticLoadPlaces() {
         lat: lat - 0.00022,
         lng: lng + 0.00022,
       },
+      position: {
+        x: 0,
+        y: 1,
+        z: 0,
+      },
     },
     {
       name: "Magnemite",
       location: {
         lat: lat + 0.00091,
         lng: lng - 0.00032,
+      },
+      position: {
+        x: 1,
+        y: 1,
+        z: 0,
       },
     },
     {
@@ -39,12 +49,22 @@ function staticLoadPlaces() {
         lat: lat + 0.00002,
         lng: lng + 0.00008,
       },
+      position: {
+        x: 2,
+        y: 1,
+        z: 0,
+      },
     },
     {
       name: "Magnemite",
       location: {
         lat: lat + 0.00002,
         lng: +0.00003,
+      },
+      position: {
+        x: 0,
+        y: 0.5,
+        z: 0,
       },
     },
     {
@@ -53,12 +73,22 @@ function staticLoadPlaces() {
         lat: lat - 0.00024,
         lng: lng + 0.00034,
       },
+      position: {
+        x: 2,
+        y: 2,
+        z: 0,
+      },
     },
     {
       name: "Magnemite",
       location: {
         lat: lat - 0.00105,
         lng: lng + 0.00065,
+      },
+      position: {
+        x: 0,
+        y: 1,
+        z: 0,
       },
     },
   ];
@@ -71,10 +101,15 @@ function renderPlaces(places) {
     let latitude = place.location.lat;
     let longitude = place.location.lng;
 
+    let x = place.position.x;
+    let y = place.position.y;
+    let z = place.position.z;
+
     let model = document.createElement("a-entity");
     model.setAttribute(
-      "gps-entity-place",
-      `latitude: ${latitude}; longitude: ${longitude};`
+      "position",
+      `${(x, y, z)}`
+      //`latitude: ${latitude}; longitude: ${longitude};`
     );
     model.setAttribute("gltf-model", "./assets/magnemite/scene.gltf");
     model.setAttribute("rotation", "0 180 0");
