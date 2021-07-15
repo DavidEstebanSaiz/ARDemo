@@ -14,9 +14,57 @@ window.onload = () => {
 
   window.onload = function () {
     var camera = document.getElementById("camera");
+    const crd_longitude = document.getElementById("crd_longitude");
+    const crd_latitude = document.getElementById("crd_latitude");
+    const zero_crd_longitude = document.getElementById("zero_crd_longitude");
+    const zero_crd_latitude = document.getElementById("zero_crd_latitude");
+    const camera_p_x = document.getElementById("camera_p_x");
+    const camera_p_z = document.getElementById("camera_p_z");
+    const compass_heading = document.getElementById("compass_heading");
+    const camera_angle = document.getElementById("camera_angle");
+    const geohash_7chars = document.getElementById("geohash_7chars");
 
     camera.addEventListener("componentchanged", function (evt) {
-      console.log("HOLAS", evt.detail);
+      switch (evt.detail.name) {
+        case "rotation":
+          //console.log('camera rotation changed', evt.detail.newData);
+          var compassRotation = camera.components["compass-rotation"],
+            lookControls = camera.components["look-controls"];
+          camera_angle.innerText = evt.detail.newData.y;
+          if (lookControls) {
+            yaw_angle.innerText = THREE.Math.radToDeg(
+              lookControls.yawObject.rotation.y
+            );
+          }
+          if (compassRotation) {
+            compass_heading.innerText = compassRotation.heading;
+          }
+          break;
+        case "position":
+          //console.log('camera position changed', evt.detail.newData);
+          var gpsPosition = camera.components["gps-position"];
+          camera_p_x.innerText = evt.detail.newData.x;
+          camera_p_z.innerText = evt.detail.newData.z;
+          if (gpsPosition) {
+            if (gpsPosition.crd) {
+              crd_longitude.innerText = gpsPosition.crd.longitude;
+              crd_latitude.innerText = gpsPosition.crd.latitude;
+
+              var hash = Geohash.encode(
+                gpsPosition.crd.latitude,
+                gpsPosition.crd.longitude,
+                7
+              );
+              geohash_7chars.innerText = hash;
+            }
+            if (gpsPosition.zeroCrd) {
+              zero_crd_longitude.innerText = gpsPosition.zeroCrd.longitude;
+              zero_crd_latitude.innerText = gpsPosition.zeroCrd.latitude;
+            }
+          }
+
+          break;
+      }
     });
   };
 };
