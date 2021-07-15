@@ -10,48 +10,54 @@ window.onload = () => {
   });
 };
 
+function generateRandomInt(min, max) {
+  const randomnum = Math.random() * (max - min);
+  return randomnum.toFixed(6);
+}
+
 function staticLoadPlaces() {
+  const randomSpace = 0.000013;
   return [
     {
       name: "Magnemite",
       location: {
-        lat: lat - 0.00072,
-        lng: lng + 0.00022,
+        lat: lat + generateRandomInt(-randomSpace, randomSpace),
+        lng: lng + generateRandomInt(-randomSpace, randomSpace),
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + 0.00091,
-        lng: lng - 0.00032,
+        lat: lat + generateRandomInt(-randomSpace, randomSpace),
+        lng: lng + generateRandomInt(-randomSpace, randomSpace),
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + 0.00002,
-        lng: lng + 0.00008,
+        lat: lat + generateRandomInt(-randomSpace, randomSpace),
+        lng: lng + generateRandomInt(-randomSpace, randomSpace),
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat + 0.00002,
-        lng: +0.00003,
+        lat: lat + generateRandomInt(-randomSpace, randomSpace),
+        lng: lng + generateRandomInt(-randomSpace, randomSpace),
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat - 0.00024,
-        lng: lng + 0.00034,
+        lat: lat + generateRandomInt(-randomSpace, randomSpace),
+        lng: lng + generateRandomInt(-randomSpace, randomSpace),
       },
     },
     {
       name: "Magnemite",
       location: {
-        lat: lat - 0.00105,
-        lng: lng + 0.00065,
+        lat: lat + generateRandomInt(-randomSpace, randomSpace),
+        lng: lng + generateRandomInt(-randomSpace, randomSpace),
       },
     },
   ];
