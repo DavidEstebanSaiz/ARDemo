@@ -2,7 +2,6 @@ let lat = null;
 let lng = null;
 
 window.onload = () => {
-  console.log("HOLASCOMPADRE");
   var camera = document.getElementById("camera");
   const crd_longitude = document.getElementById("crd_longitude");
   const crd_latitude = document.getElementById("crd_latitude");
@@ -18,6 +17,7 @@ window.onload = () => {
 
   camera.addEventListener("componentchanged", function (evt) {
     console.log("HOLAS", evt);
+    alert("PASA");
     switch (evt.detail.name) {
       case "rotation":
         //console.log('camera rotation changed', evt.detail.newData);
