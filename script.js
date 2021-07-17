@@ -16,7 +16,7 @@ window.onload = () => {
   const el = document
     .getElementById("itemMesh")
     .addEventListener("click", function (evt) {
-      console.log("HOLASPASA3333");
+      alert("CLICK");
     });
 
   const constraints = {
