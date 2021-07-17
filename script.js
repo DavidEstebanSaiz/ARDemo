@@ -1,15 +1,68 @@
 let lat = null;
 let lng = null;
+/*
+AFRAME.registerComponent("info-panel", {
+  init: function () {
+    console.log("HOLAS", this.el);
+    this.el.addEventListener("click", function (evt) {
+      console.log("HOLASPASA222");
+    });
+  },
+});
+*/
 
 window.onload = () => {
+  console.log("HOLASAMIGO");
+  const el = document
+    .getElementById("itemMesh")
+    .addEventListener("click", function (evt) {
+      console.log("HOLASPASA3333");
+    });
+
+  const constraints = {
+    video: {
+      facingMode: "environment",
+    },
+  };
+
+  const video = document.querySelector("video");
+
+  navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+    video.srcObject = stream;
+  });
+};
+/*
+
+window.onload = () => {
+  
+  const constraints = {
+    video: {
+      facingMode: "environment",
+    },
+  };
+
+  const video = document.querySelector("video");
+
+  navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+    video.srcObject = stream;
+  });
+
   //DECLARAR LEMENTOS
   navigator.geolocation.getCurrentPosition(function (position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
     let places = staticLoadPlaces();
-    renderPlaces(places);
+    //renderPlaces(places);
   });
+
+  //CLICK EN MESH
+  //const holas = document.querySelector("a-entity").object3D;
+  //console.log("HOLAS", holas);
 };
+
+function onMeshClick(ev) {
+  console.log("HOLASCOMPADRE");
+}
 
 function generateRandomInt(min, max) {
   const randomnum = Math.random() * (max - min);
@@ -59,3 +112,4 @@ function renderPlaces(places) {
     scene.appendChild(model);
   });
 }
+*/
