@@ -28,7 +28,12 @@
         look-controls="reverseMouseDrag:true; touchEnabled: false;"
       >
       </a-camera>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-box 
+        position="-1 0.5 -3" 
+        rotation="0 45 0" 
+        color="#4CC3D9"
+        cursor='rayOrigin: mouse;' 
+        ></a-box>
       <a-assets>
         <a-asset-item
           id="paper"
@@ -51,6 +56,6 @@
         info-panel
         cursor='rayOrigin: mouse;'
       ></a-entity>
-      <a-video id="videoPanel" src="#video" width="8" height="4.5" position="0 3 -9" visible="false"></a-video>
+      <!-- <a-video id="videoPanel" src="#video" width="8" height="4.5" position="0 3 -9" visible="false"></a-video> -->
   </body>
 </html>
