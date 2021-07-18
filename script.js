@@ -1,24 +1,24 @@
 let lat = null;
 let lng = null;
-/*
-AFRAME.registerComponent("info-panel", {
+
+AFRAME.registerComponent("origami", {
   init: function () {
-    console.log("HOLAS", this.el);
-    this.el.addEventListener("click", function (evt) {
-      console.log("HOLASPASA222");
-    });
+    var origami = document.querySelectorAll(".origami");
+    this.onOrigamiClick = this.onOrigamiClick.bind(this);
+    for (var i = 0; i < origami.length; ++i) {
+      origami[i].addEventListener("click", this.onOrigamiClick);
+    }
+  },
+  onOrigamiClick: function (evt) {
+    const videoEl = document.getElementById("video");
+    const video = document.getElementById("videoPanel");
+    video.setAttribute("visible", "true");
+    videoEl.play();
   },
 });
-*/
 
 window.onload = () => {
   console.log("HOLASAMIGO");
-  const el = document
-    .getElementById("itemMesh")
-    .addEventListener("click", function (evt) {
-      alert("CLICK");
-    });
-
   const constraints = {
     video: {
       facingMode: "environment",
