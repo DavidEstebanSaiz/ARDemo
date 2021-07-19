@@ -3,17 +3,28 @@ let lng = null;
 
 AFRAME.registerComponent("origami", {
   init: function () {
-    var origami = document.querySelectorAll(".origami");
+    const origami = document.querySelectorAll(".origami");
+    const origamiBg = document.getElementById("video-oribami-bg");
+    this.videoOrigami = document.getElementById("video-origami");
+    this.origamiContainer = document.getElementById("video-origami-container");
+
     this.onOrigamiClick = this.onOrigamiClick.bind(this);
+    this.onOrigamiBgClick = this.onOrigamiBgClick.bind(this);
     for (var i = 0; i < origami.length; ++i) {
       origami[i].addEventListener("click", this.onOrigamiClick);
     }
+    origamiBg.addEventListener("click", this.onOrigamiBgClick);
   },
   onOrigamiClick: function (evt) {
-    const videoEl = document.getElementById("video");
-    const video = document.getElementById("videoPanel");
-    video.setAttribute("visible", "true");
-    videoEl.play();
+    console.log("HOLAS");
+    this.origamiContainer.style.display = "flex";
+    this.videoOrigami.currentTime = 0;
+    this.videoOrigami.play();
+  },
+  onOrigamiBgClick: function (evt) {
+    this.origamiContainer.style.display = "none";
+    this.videoOrigami.currentTime = 0;
+    this.videoOrigami.pause();
   },
 });
 
